@@ -1,9 +1,13 @@
 import cv2 as cv
 import numpy as np
+import imutils
 from matplotlib import pyplot as plt 
 
 img = cv.imread("imagens/cebola1.jpg", 1)
 img_gray = cv.imread("imagens/cebola1.jpg", 0)
+
+img = imutils.resize(img, width=100)
+img_gray = imutils.resize(img_gray, width=100)
 
 cv.imshow("IMG EM RGB", img)
 cv.imshow("IMG GRAY", img_gray)
